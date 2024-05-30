@@ -1,0 +1,121 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: #0b0b22 url('../img/space_bg-1422.jpg') repeat center;
+  font-family: 'Cormorant SC', sans-serif;
+  font-size: 18px;
+}
+h1 {
+  font-family: 'Pinyon Script';
+  font-size: 3em;
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+}
+p {
+  color: #FFFFFF;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+#particles-js {
+  z-index: 1000;
+}
+#estrellas {
+  z-index: 998;
+}
+#particles-js,#estrellas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.cosocontenedor {
+  padding: 5px 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  margin: 0 auto;
+  z-index: 1001;
+  background-color: rgba(0,0,0, 0.5);
+  border-radius: 5px;
+  pointer-events: none;
+}
+.footer {
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-top: 1px solid #000000;
+  font-size: 1.3em;
+  text-align: right;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+  height: 40px;
+}
+.footer a {
+  pointer-events: visible;
+}
+.footer p {
+    display: inline-block;
+    height: 100%;
+    line-height: 100%;
+    margin: 0;
+    padding: 0;
+    -webkit-transform: translateY(-25%);
+    transform: translateY(-25%);
+}
+.whatsapp {
+
+  width: 40px;
+  height: 40px;
+  /*background: transparent url('https://res.cloudinary.com/cosopimba/image/upload/c_scale,fl_png24.preserve_transparency,h_40,q_auto:best/v1496863359/580b57fcd9996e24bc43c543_w2bhav.png') no-repeat center;*/
+  background: transparent url('../img/whatsapp_logo.png') no-repeat center;
+
+}
+.facebook {
+
+  width: 40px;
+  height: 40px;
+  background: transparent url('../img/facebook.png') no-repeat center;
+  /*background: transparent url('img/whatsapp_logo.png') no-repeat center;*/
+
+}
+.share-btn {
+  display: inline-block;
+}
+.share-btn span {
+  display: none;
+}
+
+.video-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 998;
+  overflow: hidden;
+}
+
+.video-container > video#bg-video {
+  position: relative;
+  left:50%;
+  background: url('../img/space_bg-1422.jpg') no-repeat;
+  background-size: contain;
+  transform: translateX(-50%);
+  height: 100%;
+  width: auto;
+}
+@media (min-width: 800px) {
+  .video-container > video#bg-video {
+    width: 100%;
+    height: auto;
+  }
+}

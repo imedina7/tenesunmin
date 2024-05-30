@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html manifest="tenesunmin.appcache">
+  <head>
+    <meta charset="utf-8">
+    <title>Buenass, tenés un min?</title>
+    <link rel="icon" type="image/x-icon" href="static/img/favicon.ico">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  	<meta property="og:type" content="website">
+  	<meta property="og:url" content="https://imedina7.github.io/tenesunmin/">
+  	<meta property="og:title" content="Tenés un min?">
+  	<meta property="og:image" content="https://imedina7.github.io/tenesunmin/static/img/squash_fb.png">
+  	<meta property="og:description" content="Vótenme. Because we rock!!">
+
+
+  	<meta property="twitter:url" content="https://imedina7.github.io/tenesunmin/">
+  	<meta property="twitter:title" content="Tenés un min?">
+  	<meta property="twitter:description" content="Vótenme. Because we rock!!">
+  	<meta property="twitter:image" content="https://imedina7.github.io/tenesunmin/static/img/squash_fb.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link href="static/css/fonts.css" type="text/css" rel="stylesheet">
+    <link href="static/css/master.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="static/js/particles.min.js"></script>
+  </head>
+
+  <body>
+
+    <div id="particles-js">
+    <div class="cosocontenedor">
+      <h1>Buenasssss</h1>
+      <p id="frase">Cómo te están tratando?</p>
+    </div>
+    <div class="footer">
+      <p style="float: left; transform: none; margin-top: 5px">Space buenas score: <span id="space-buenas"></span></p>
+      <a href="whatsapp://send?text=Hola tenesunmin? https%3A//tenesunmin.herokuapp.com/" data-action="share/whatsapp/share" class="whatsapp share-btn"><span>Share via WhatsApp</span></a>
+      <a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A//tenesunmin.herokuapp.com/', '_blank','width=300,height=400'); return false;" class="facebook share-btn">
+<span>Share on Facebook</span></a>
+    </div>
+
+    </div>
+    <div id="estrellas">
+    </div>
+    <div class="video-container">
+      <video src="static/video/star_bg_loop_h800.mp4" class="bg-video" autoplay>
+      </video>
+    </div>
+  <script type="text/javascript" src="static/js/buenas.js"></script>
+  <script type="text/javascript">
+  if('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js', { scope: '/' })
+        .then(function(registration) {
+              console.log('Service Worker Registered');
+        });
+      navigator.serviceWorker.ready.then(function(registration) {
+         console.log('Service Worker Ready');
+      });
+    }
+  </script>
+  </body>
+</html>

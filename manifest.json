@@ -1,0 +1,25 @@
+{
+  "short_name": "Tenes un min?",
+  "name": "Tenes un min?",
+  "icons": [
+    {
+      "src": "static/img/trueba_48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "static/img/trueba_96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "static/img/trueba_192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "index.html",
+  "background_color": "#0b0b22",
+  "scope": "/",
+  "display": "standalone"
+}
