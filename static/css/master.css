@@ -7,7 +7,6 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background: #0b0b22 url('../img/space_bg-1422.jpg') repeat center;
   font-family: 'Cormorant SC', sans-serif;
   font-size: 18px;
 }
@@ -25,6 +24,9 @@ p {
   z-index: 1000;
 }
 #estrellas {
+  background-image: url('/static/img/bg.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
   z-index: 998;
 }
 #particles-js,#estrellas {

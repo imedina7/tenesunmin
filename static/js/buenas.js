@@ -137,17 +137,17 @@ var estrellasConfig = {
       }
     },
     "opacity": {
-      "value": 0.7,
+      "value": 0.88,
       "random": false,
       "anim": {
         "enable": true,
         "speed": 0.2,
-        "opacity_min": 0,
+        "opacity_min": 0.5,
         "sync": false
       }
     },
     "size": {
-      "value": 2,
+      "value": 3,
       "random": true,
       "anim": {
         "enable": true,
@@ -270,9 +270,7 @@ var estrellasConfig = {
   
   var mainBuenasNum = 0;
   function playBuenas () {
-    if(!video.isPlaying) video.play();
-
-    console.log("current particle amount:", buenasPJsInstance.particles.array.length);
+    // console.log("current particle amount:", buenasPJsInstance.particles.array.length);
     var audioSrc = '/tenesunmin/static/snd/buenas_%d.mp3';
     var buenasAmt = 10;
     var buenasNum = randomN(mainBuenasNum,buenasAmt);
