@@ -8,21 +8,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
   	<meta property="og:type" content="website">
-  	<meta property="og:url" content="https://imedina7.github.io/tenesunmin/">
+  	<meta property="og:url" content="https://www.tenesunm.in/">
   	<meta property="og:title" content="Tenés un min?">
-  	<meta property="og:image" content="https://imedina7.github.io/tenesunmin/static/img/squash_fb.png">
+  	<meta property="og:image" content="https://www.tenesunm.in/static/img/squash_fb.png">
   	<meta property="og:description" content="Vótenme. Because we rock!!">
 
 
-  	<meta property="twitter:url" content="https://imedina7.github.io/tenesunmin/">
+  	<meta property="twitter:url" content="https://www.tenesunm.in/">
   	<meta property="twitter:title" content="Tenés un min?">
   	<meta property="twitter:description" content="Vótenme. Because we rock!!">
-  	<meta property="twitter:image" content="https://imedina7.github.io/tenesunmin/static/img/squash_fb.png">
+  	<meta property="twitter:image" content="https://www.tenesunm.in/static/img/squash_fb.png">
     <meta name="twitter:card" content="summary_large_image">
 
     <link href="static/css/fonts.css" type="text/css" rel="stylesheet">
     <link href="static/css/master.css" type="text/css" rel="stylesheet">
     <script type="text/javascript" src="static/js/particles.min.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XBG10YY6ZK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XBG10YY6ZK');
+    </script>
   </head>
 
   <body>
@@ -30,13 +39,14 @@
     <div id="particles-js">
     <div class="cosocontenedor">
       <h1>Buenasssss</h1>
-      <p id="frase">Cómo te están tratando?</p>
+      <p id="quote">&quot;Cómo te están tratando?&quot;</p>
+      <p id="who">&mdash;Tío Manu</p>
     </div>
     <div class="footer">
       <p>Space buenas score: <span id="space-buenas"></span></p>
       <div>
-        <a href="whatsapp://send?text=Hola tenesunmin? https%3A%2F%2Ftenesunmin.israelmedina.com%2F" data-action="share/whatsapp/share" class="whatsapp share-btn"><span>Share via WhatsApp</span></a>
-        <a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftenesunmin.israelmedina.com%2F', '_blank','width=300,height=400'); return false;" class="facebook share-btn">
+        <a href="whatsapp://send?text=Hola tenesunmin? https%3A%2F%2Fwww.tenesunm.in%2F" data-action="share/whatsapp/share" class="whatsapp share-btn"><span>Share via WhatsApp</span></a>
+        <a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.tenesunm.in%2F', '_blank','width=300,height=400'); return false;" class="facebook share-btn">
           <span>Share on Facebook</span></a>
       </div>
     </div>
@@ -44,18 +54,17 @@
     </div>
     <div id="estrellas">
     </div>
-    <script type="text/javascript" scr="static/js/config.js"></script>
-  <script type="text/javascript" src="static/js/buenas.js"></script>
-  <script type="text/javascript">
-  if('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js', { scope: '/' })
-        .then(function(registration) {
-              console.log('Service Worker Registered');
+    <script type="text/javascript" src="static/js/buenas.js"></script>
+    <script type="text/javascript">
+    if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js', { scope: '/' })
+          .then(function(registration) {
+                console.log('Service Worker Registered');
+          });
+        navigator.serviceWorker.ready.then(function(registration) {
+          console.log('Service Worker Ready');
         });
-      navigator.serviceWorker.ready.then(function(registration) {
-         console.log('Service Worker Ready');
-      });
-    }
-  </script>
+      }
+    </script>
   </body>
 </html>
