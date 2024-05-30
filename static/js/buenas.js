@@ -233,10 +233,6 @@ var estrellasConfig = {
 
   var particleElId = 'particles-js';
 
-  var particleEl = document.getElementById(particleElId);
-
-  var viewportWidth = window.innerWidth;
-  var viewportHeight = window.innerHeight;
   var buenas_score = getStoredBuenasScore();
   var video = document.querySelector('.bg-video');
 
@@ -250,45 +246,37 @@ var estrellasConfig = {
     return score;
   }
 
-  function updateScore(){
+  function updateScore(score){
     var scoreCountEl = document.getElementById('space-buenas');
-    scoreCountEl.innerHTML = buenas_score;
-    window.localStorage.setItem('score',buenas_score);
+    scoreCountEl.innerHTML = score;
+    window.localStorage.setItem('score', score);
   }
 
-  function randomN(n,amt) {
-    var rnd = Math.round(Math.random() * amt);
-    if (rnd == n) {
-      return randomN(rnd,amt);
-    }
-    return rnd;
+  function randomN(amt) {
+    return Math.floor(Math.random() * amt);
   }
   function getPJSInstance() {
     return pJSDom.find(pjs => pjs.pJS.canvas.el.parentElement.id === particleElId).pJS;
   }
 
-  
-  var mainBuenasNum = 0;
   function playBuenas () {
     if(!video.isPlaying) video.play();
 
-    console.log("current particle amount:", buenasPJsInstance.particles.array.length);
-    var audioSrc = '/tenesunmin/static/snd/buenas_%d.mp3';
-    var buenasAmt = 10;
-    var buenasNum = randomN(mainBuenasNum,buenasAmt);
-    mainBuenasNum = buenasNum;
+    console.log("current particle amount:",
+      buenasPJsInstance.particles.array.length);
+    var buenasAmt = 11;
+    var buenasNum = randomN(buenasAmt);
 
     if (buenasNum == 10)
-      buenas_score++;
+      updateScore(++buenas_score);
 
-    var currentBuenas =
-    audioSrc.replace('%d', buenasNum);
+    var currentBuenas = `/static/snd/buenas_${buenasNum}.mp3`;
 
-    var a = new Audio();
-    a.src = currentBuenas;
+    var a = new Audio(currentBuenas);
     a.play();
     navigator.vibrate(100);
   }
+
   particlesJS("estrellas", estrellasConfig);
   particlesJS(particleElId, manuelesConfig);
   var buenasPJsInstance = getPJSInstance()
@@ -296,14 +284,14 @@ var estrellasConfig = {
   document.body.addEventListener('click', playBuenas);
 
   function updateQuote() {
-    var quoteElem = document.querySelector('#frase');
+    var quoteElem = document.querySelector('#quote');
     var quoteText = getRandomQuote();
 
     setTimeout(function () {
-      quoteElem.textContent = quoteText
+      quoteElem.textContent = `"${quoteText}"`
       requestAnimationFrame(updateQuote);
     }, 30000);
   }
   updateQuote();
-  updateScore();
+  updateScore(buenas_score);
 })();
