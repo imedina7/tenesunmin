@@ -5,11 +5,41 @@ html {
   box-sizing: inherit;
 }
 body {
+  user-select: none;
   margin: 0;
   padding: 0;
   font-family: 'Cormorant SC', sans-serif;
   font-size: 18px;
 }
+
+#flasher {
+  pointer-events: none;
+  z-index: 1500;
+  opacity: 0;
+  background-color: white;
+}
+
+@keyframes flash {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.flash {
+  animation: flash 400ms linear;
+}
+
+.inset-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
 h1 {
   font-family: 'Pinyon Script';
   font-size: 3em;

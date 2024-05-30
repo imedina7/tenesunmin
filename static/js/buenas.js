@@ -219,6 +219,13 @@ var estrellasConfig = {
   },
   "retina_detect": true
 };
+  function flashScreen() {
+    var flasher = document.querySelector('#flasher');
+    flasher.classList.add('flash');
+    setTimeout(() => {
+      flasher.classList.remove('flash');
+    }, 500);
+  }
   function getRandomQuote() {
     var quotes = [
       "Tenes un min?",
@@ -266,8 +273,10 @@ var estrellasConfig = {
     var buenasAmt = 11;
     var buenasNum = randomN(buenasAmt);
 
-    if (buenasNum == 10)
+    if (buenasNum == 10){
       updateScore(++buenas_score);
+      flashScreen();
+    }
 
     var currentBuenas = `/static/snd/buenas_${buenasNum}.mp3`;
 
