@@ -1,5 +1,4 @@
-(function (){
-var manuelesConfig = {
+window.manuelesConfig = {
   "particles": {
     "number": {
       "value": 80,
@@ -109,7 +108,7 @@ var manuelesConfig = {
   },
   "retina_detect": true
 };
-var estrellasConfig = {
+window.estrellasConfig = {
   "particles": {
     "number": {
       "value": 355,
@@ -219,91 +218,3 @@ var estrellasConfig = {
   },
   "retina_detect": true
 };
-  function getRandomQuote() {
-    var quotes = [
-      "Tenes un min?",
-      "Como te estan tratando?",
-      "No me gusta el home office",
-      "Porque yo veía la matrix..."
-    ];
-
-    var randomElemIdx = Math.floor(Math.random() * quotes.length);
-    return quotes[randomElemIdx];
-  }
-
-  var particleElId = 'particles-js';
-
-  var particleEl = document.getElementById(particleElId);
-
-  var viewportWidth = window.innerWidth;
-  var viewportHeight = window.innerHeight;
-  var buenas_score = getStoredBuenasScore();
-  var video = document.querySelector('.bg-video');
-
-  function getStoredBuenasScore(){
-    var score = 0;
-    if (window.localStorage.getItem('score') == null)
-      window.localStorage.setItem('score',score);
-    else {
-      score = window.localStorage.getItem('score');
-    }
-    return score;
-  }
-
-  function updateScore(){
-    var scoreCountEl = document.getElementById('space-buenas');
-    scoreCountEl.innerHTML = buenas_score;
-    window.localStorage.setItem('score',buenas_score);
-  }
-
-  function randomN(n,amt) {
-    var rnd = Math.round(Math.random() * amt);
-    if (rnd == n) {
-      return randomN(rnd,amt);
-    }
-    return rnd;
-  }
-  function getPJSInstance() {
-    return pJSDom.find(pjs => pjs.pJS.canvas.el.parentElement.id === particleElId).pJS;
-  }
-
-  
-  var mainBuenasNum = 0;
-  function playBuenas () {
-    if(!video.isPlaying) video.play();
-
-    console.log("current particle amount:", buenasPJsInstance.particles.array.length);
-    var audioSrc = '/static/snd/buenas_%d.mp3';
-    var buenasAmt = 10;
-    var buenasNum = randomN(mainBuenasNum,buenasAmt);
-    mainBuenasNum = buenasNum;
-
-    if (buenasNum == 10)
-      buenas_score++;
-
-    var currentBuenas =
-    audioSrc.replace('%d', buenasNum);
-
-    var a = new Audio();
-    a.src = currentBuenas;
-    a.play();
-    navigator.vibrate(100);
-  }
-  particlesJS("estrellas", estrellasConfig);
-  particlesJS(particleElId, manuelesConfig);
-  var buenasPJsInstance = getPJSInstance()
-  document.body.addEventListener('touchstart', playBuenas);
-  document.body.addEventListener('click', playBuenas);
-
-  function updateQuote() {
-    var quoteElem = document.querySelector('#frase');
-    var quoteText = getRandomQuote();
-
-    setTimeout(function () {
-      quoteElem.textContent = quoteText
-      requestAnimationFrame(updateQuote);
-    }, 30000);
-  }
-  updateQuote();
-  updateScore();
-})();

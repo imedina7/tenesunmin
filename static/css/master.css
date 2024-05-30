@@ -42,11 +42,18 @@ p {
   transform: translate(-50%,-50%);
   margin: 0 auto;
   z-index: 1001;
-  background-color: rgba(0,0,0, 0.5);
+  background-color: rgba(78, 78, 78, 0.607);
+  backdrop-filter: blur(6px);
   border-radius: 5px;
+  border-width: 1px;
+  border-color: rgba(47, 47, 47, 0.313);
+  border-style: solid;
   pointer-events: none;
+  box-shadow: inset 0px 0.5px 1px rgba(131, 129, 129, 0.707);
 }
 .footer {
+  display: flex;
+  justify-content: space-between;
   pointer-events: none;
   background-color: rgba(0, 0, 0, 0.5);
   border-top: 1px solid #000000;
@@ -56,34 +63,30 @@ p {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 0;
+  padding: 5px 5px;
   height: 40px;
 }
 .footer a {
   pointer-events: visible;
 }
 .footer p {
-    display: inline-block;
     height: 100%;
-    line-height: 100%;
     margin: 0;
-    padding: 0;
-    -webkit-transform: translateY(-25%);
-    transform: translateY(-25%);
 }
 .whatsapp {
 
-  width: 40px;
-  height: 40px;
+  width: 28px;
+  height: 28px;
   /*background: transparent url('https://res.cloudinary.com/cosopimba/image/upload/c_scale,fl_png24.preserve_transparency,h_40,q_auto:best/v1496863359/580b57fcd9996e24bc43c543_w2bhav.png') no-repeat center;*/
   background: transparent url('../img/whatsapp_logo.png') no-repeat center;
-
+  background-size: contain;
 }
 .facebook {
 
-  width: 40px;
-  height: 40px;
+  width:28px;
+  height: 28px;
   background: transparent url('../img/facebook.png') no-repeat center;
+  background-size: contain;
   /*background: transparent url('img/whatsapp_logo.png') no-repeat center;*/
 
 }
