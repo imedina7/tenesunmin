@@ -273,7 +273,7 @@ var estrellasConfig = {
     if(!video.isPlaying) video.play();
 
     console.log("current particle amount:", buenasPJsInstance.particles.array.length);
-    var audioSrc = '/static/snd/buenas_%d.mp3';
+    var audioSrc = '/tenesunmin/static/snd/buenas_%d.mp3';
     var buenasAmt = 10;
     var buenasNum = randomN(mainBuenasNum,buenasAmt);
     mainBuenasNum = buenasNum;
